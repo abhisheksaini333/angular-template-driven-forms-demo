@@ -6,12 +6,13 @@
       <br/>
       <div class="form-group">
         <label>Username</label>
-        <input class="form-control" [(ngModel)]="formModel.username" type="text" #username="ngModel" id="username" name="username" required minlength="6" maxlength="25" />
+        <input class="form-control" [(ngModel)]="formModel.username" type="text" #username="ngModel" id="username" name="username" required minlength="6" maxlength="25" userName [ngModelOptions]="{standalone: true}"/>
         <!-- Show the error message over here -->
         <div *ngIf="username.invalid && (username.dirty || username.touched)">
           <div class="text-danger" *ngIf="username.errors?.required">Username is required</div>
           <div class="text-danger" *ngIf="username.errors?.minlength">Username must contain minimum 6 characters</div>
           <div class="text-danger" *ngIf="username.errors?.maxlength">Username must contain less than 25 characters</div>
+          <div class="text-danger" *ngIf="username.errors?.userName">Username is not 'amazon'</div>
         </div>
       </div>
       <br/>

@@ -4,9 +4,12 @@ import { FormsModule } from '@angular/forms';
 
 import { AppComponent } from './app.component';
 
+import { UserNameValidator } from './directives/userName';
+
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
+    UserNameValidator
   ],
   imports: [
     BrowserModule,
